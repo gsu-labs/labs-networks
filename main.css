@@ -1,0 +1,35 @@
+/*
+table {
+    margin: 5vh;
+}
+
+table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    height: 3vh;
+    width: 3vh;
+}
+
+.IF {
+    background-color: yellow;
+}
+
+.ID {
+    background-color: lime;
+}
+
+.OR {
+    background-color: green;
+}
+
+.EX {
+    background-color: skyblue;
+}
+
+.WB {
+    background-color: blue;
+}
+*/
