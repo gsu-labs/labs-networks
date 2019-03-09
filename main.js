@@ -1,28 +1,26 @@
-/*
-function tableCreate() {
-    var body = document.getElementsByTagName('body')[0];
-    var tbl = document.createElement('table');
-    tbl.style.width = '100%';
-    tbl.setAttribute('border', '1');
-    var tbdy = document.createElement('tbody');
-    for (var i = 0; i < 3; i++) {
-        var tr = document.createElement('tr');
-        for (var j = 0; j < 2; j++) {
-            if (i == 2 && j == 1) {
-                break
-            } else {
-                var td = document.createElement('td');
-                td.appendChild(document.createTextNode('\u0020'))
-                i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-                tr.appendChild(td)
-            }
-        }
-        tbdy.appendChild(tr);
-    }
-    tbl.appendChild(tbdy);
-    body.appendChild(tbl)
-}*/
+
 function create() {
+
+    function switchColor(j) {
+        switch (j) {
+            case 0:
+                tdstart = "<td bgcolor='yellow' height='10' width='10'>";
+                break;
+            case 1:
+                tdstart = "<td bgcolor='#7fff00' height='10' width='10'>";
+                break;
+            case 2:
+                tdstart = "<td bgcolor='green' height='10' width='10'>";
+                break;
+            case 3:
+                tdstart = "<td bgcolor='aqua' height='10' width='10'>";
+                break;
+            case 4:
+                tdstart = "<td bgcolor='blue' height='10' width='10'>";
+                break;
+        }
+    }
+
     var arr = [];
     var arr2 = [];
     arr[0] = parseInt(document.getElementById("IF").value);
@@ -57,23 +55,7 @@ function create() {
     document.write(trstart);
     for(let i=0;i<5;i++) {
         for(let j=0;j<5;j++) {
-            switch (j) {
-                case 0:
-                    tdstart = "<td bgcolor='yellow' height='10' width='10'>";
-                    break;
-                case 1:
-                    tdstart = "<td bgcolor='#7fff00' height='10' width='10'>";
-                    break;
-                case 2:
-                    tdstart = "<td bgcolor='green' height='10' width='10'>";
-                    break;
-                case 3:
-                    tdstart = "<td bgcolor='aqua' height='10' width='10'>";
-                    break;
-                case 4:
-                    tdstart = "<td bgcolor='blue' height='10' width='10'>";
-                    break;
-            }
+            switchColor(j);
             for(let k=0;k<arr[j]*arr2[i][j];k++) {
                 reiting[0]++;
                 document.write(tdstart);
@@ -127,35 +109,11 @@ function create() {
     for(let i=0;i<5;i++) {
         document.write(trstart);
         for(let j=0;j<5;j++) {
-            switch (j) {
-                case 0:
-                    tdstart = "<td bgcolor='yellow' height='10' width='10'>";
-                    break;
-                case 1:
-                    tdstart = "<td bgcolor='#7fff00' height='10' width='10'>";
-                    break;
-                case 2:
-                    tdstart = "<td bgcolor='green' height='10' width='10'>";
-                    break;
-                case 3:
-                    tdstart = "<td bgcolor='aqua' height='10' width='10'>";
-                    break;
-                case 4:
-                    tdstart = "<td bgcolor='blue' height='10' width='10'>";
-                    break;
-            }
+            switchColor(j);
             if(i===0){
                 for(let k=0;k<howLong[i][j];k++) {
                     document.write(tdstart);
                     document.write(tdend);
-                }
-                if(j===4){/** tozhe */
-                    buffer=0;
-                    while (buffer !== whereNeedToStart[4][4]+howLong[4][4] - whereNeedToStart[i][j]+howLong[i][j]-6){
-                        document.write(td);
-                        document.write(tde);
-                        buffer++;
-                    }
                 }
             }
             else{
@@ -177,19 +135,6 @@ function create() {
                     for(let k=0;k<howLong[i][j];k++) {
                         document.write(tdstart);
                         document.write(tdend);
-                    }
-                    if(j===4 && i!==4){/** tozhe */
-                    if(i===1)
-                        buffer=6;
-                    else if(i===2)
-                        buffer=4;
-                    else if(i===3)
-                        buffer=2;
-                        while (buffer !== whereNeedToStart[4][4]+howLong[4][4] - whereNeedToStart[i][j]+howLong[i][j]){
-                            document.write(td);
-                            document.write(tde);
-                            buffer++;
-                        }
                     }
                 }
             }
@@ -236,35 +181,11 @@ function create() {
     for(let i=0;i<5;i++) {
         document.write(trstart);
         for(let j=0;j<5;j++) {
-            switch (j) {
-                case 0:
-                    tdstart = "<td bgcolor='yellow' height='10' width='10'>";
-                    break;
-                case 1:
-                    tdstart = "<td bgcolor='#7fff00' height='10' width='10'>";
-                    break;
-                case 2:
-                    tdstart = "<td bgcolor='green' height='10' width='10'>";
-                    break;
-                case 3:
-                    tdstart = "<td bgcolor='aqua' height='10' width='10'>";
-                    break;
-                case 4:
-                    tdstart = "<td bgcolor='blue' height='10' width='10'>";
-                    break;
-            }
+            switchColor(j);
             if(i===0){
                 for(let k=0;k<howLong[i][j];k++) {
                     document.write(tdstart);
                     document.write(tdend);
-                }
-                if(j===4){/** tozhe */
-                buffer=0;
-                    while (buffer !== whereNeedToStart[4][4]+howLong[4][4] - whereNeedToStart[i][j]+howLong[i][j]-6){
-                        document.write(td);
-                        document.write(tde);
-                        buffer++;
-                    }
                 }
             }
             else{
@@ -286,19 +207,6 @@ function create() {
                     for(let k=0;k<howLong[i][j];k++) {
                         document.write(tdstart);
                         document.write(tdend);
-                    }
-                    if(j===4 && i!==4){/** tozhe */
-                        if(i===1)
-                            buffer=6;
-                        else if(i===2)
-                            buffer=4;
-                        else if(i===3)
-                            buffer=2;
-                        while (buffer !== whereNeedToStart[4][4]+howLong[4][4] - whereNeedToStart[i][j]+howLong[i][j]){
-                            document.write(td);
-                            document.write(tde);
-                            buffer++;
-                        }
                     }
                 }
             }
@@ -330,17 +238,10 @@ function create() {
     /** *********************************** */
 
     document.write("<br/>");
-    var s="<button id="+"delete"+" onclick="+"deleteTable()"+">Delete top Row </button>";
-    document.write(s);
     var relod="<button id="+"relod"+" onclick="+"reloadPage()"+">Reload Page </button>";
     document.write(relod);
 }
-function deleteTable() {
-    var dr=0;
-    if(confirm("It will be deleted..!!")) {
-        document.getElementById("myTable").deleteRow(dr);
-    }
-}
+
 function reloadPage(){
     location.reload();
 }

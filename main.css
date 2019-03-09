@@ -14,22 +14,22 @@ th, td {
 }
 
 .IF {
-    background-color: yellow;
+    background: yellow;
 }
 
 .ID {
-    background-color: lime;
+    background: lime;
 }
 
 .OR {
-    background-color: green;
+    background: green;
 }
 
 .EX {
-    background-color: skyblue;
+    background: aqua;
 }
 
 .WB {
-    background-color: blue;
+    background: blue;
 }
 */
